@@ -47,14 +47,15 @@ Here's a walkthrough of implemented user stories:
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio
-https://www.geeksforgeeks.org/javascript-cleartimeout-clearinterval-method/
-Visual Studio Code
-Visual Studio Code Live Sass Compiler Extension
+    - https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio
+    - https://www.geeksforgeeks.org/javascript-cleartimeout-clearinterval-method/
+    - Visual Studio Code
+    - Visual Studio Code Live Sass Compiler Extension
 
-2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-A challenge I encountered was adding a timer to the game. I had to figure out where the timer started, reset, and stopped while updating it to the HTML after each guess. I decided to make functions that handled the timer to make it easier for me to understand where exactly the timer would start, stop, and reset.   
-
+2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
+ 
+    A challenge I encountered was adding a timer to the game. I decided to create a timer that gave the user 5 seconds to make a guess. To do this, I had to figure out where the timer started, reset, and stopped while updating it to the HTML. To make it easier for me to understand, I created functions that handled what the timer does. After initially implementing my timer functions, I kept running into issues where either the timer sped up, became negative, didn't reset, started too late or too early, or didn't stop. I had to research setInterval() and clearInterval() to understand how they work and it turned out that my reset function kept starting new timers which is the reason my timer sped up and didn't reset properly. After I fixed that, I was able to figure out how to properly stop the timer by replacing my resetTimer() function with my stopTimer() function in some places. Also, I added an if statement to execute loseGame() when the timer reached zero which fixed the negative issue. The biggest problem was finding out how to start the timer. Wherever I placed my startTimer() function it either started the timer too early or too late. I knew it had to be called by the playClueSequence() function as I wanted the timer to start once the playback sequence ended. I played around with the placement of startTimer() and wasn't getting anywhere. So I tried executing the playSequence() function on paper and found that I could use setTimeout() to call startTimer() using the same delay as the last clue in the playback sequence. The last clue in the current playback sequence would have a delay that accounted for the full length of time it took to complete the playback sequence. With this knowledge, I was able to create an if statement that delayed the startTimer() function until the playback sequence ended. Then, I patted myself on the back as I successfully created a working timer for this game. 
+ 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
 [YOUR ANSWER HERE]
 
