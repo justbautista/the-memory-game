@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import 'media-queries';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+$blue: #43aeffa8;
+$red: #ff5f6fa9;
+$green: #00b427b0;
+$yellow: #c0c001af;
+$brown: #836953a9;
+$purple: #643ea0af;
+$orange: #d35f01a9;
+$cyan: #01cfd696;
+$pink: #ff81d5a8;
+$background: black;
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background: $background;
+}
+
+.content {
+    width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include width900 {
+        width: 100%;
+    }
+    
+    header {
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        
+        h1 {
+            font-size: 2.5rem;
+            
+            @include width500 {
+                font-size: 2rem;
+            }
+
+            @include width380 {
+                font-size: 1.5rem;
+            }
+        }
+
+        h3 {
+            @include width380 {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .game-container {
+        height: 70%;
+        width: 70%;
+
+        @include width900 {
+            width: 90%;
+        }
+
+        .info-bar {
+            height: 20%;
+            width: 100%;
+            margin-bottom: 10px;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+
+            .bottom-level {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background: lightgray;
+                border-radius: 10px;
+                height: 80%;
+
+                @include width500 {
+                    font-size: 14px;
+                }
+
+                @include width430 {
+                    font-size: 12px;
+                }
+
+                @include width380 {
+                    font-size: 10px;
+                }
+
+                @include width380 {
+                    font-size: 9px;
+                }
+
+                .left-bottom {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .rounds {
+                        padding: 0px 15px;
+
+                        @include width380 {
+                            padding: 0px 10px;
+                        }
+
+                        @include width380 {
+                            padding: 0px 8px;
+                        }
+                    }
+                }
+
+                .right-bottom {
+                    @extend .left-bottom;
+                    
+                    .timer {
+                        padding: 0px 15px;
+
+                        @include width380 {
+                            padding: 0px 10px;
+                        }
+
+                        @include width380 {
+                            padding: 0px 8px;
+                        }
+                    }
+
+                    .lives-container {
+                        @extend .timer;
+                        border-left: 1px solid rgba(0,0,0,0.2);
+                    }
+                }
+            }
+
+            .top-level {
+                @extend .bottom-level;
+                background: black;
+
+                .left-top {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+    
+                    .start {
+                        padding: 10px;
+                        font-size: 1rem;
+                        font-weight: bolder;
+                        outline: inherit;
+                        border: none;
+                        border-radius: 10px;
+                        color: white;
+                        background: limegreen;
+                        display: block;
+
+                        @include width500 {
+                            font-size: 14px;
+                        }
+
+                        @include width380 {
+                            font-size: 12px;
+                        }
+
+                        @include width380 {
+                            font-size: 10px;
+                        }
+                    }
+    
+                    .stop {
+                        @extend .start;
+                        background: red;
+                        display: none;
+                    }
+                }
+    
+                .right-top {
+                    @extend .left-top;
+    
+                    .difficulty {
+                        .easy {
+                            float: left;
+                            font-size: 1rem;
+                            font-weight: bolder;
+                            padding: 10px;
+                            border: none;
+                            outline: inherit;
+                            color: white;
+                            background: black;
+                            border-right: 1px solid rgba(0,0,0,0.2);
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                            
+                            @include width500 {
+                                font-size: 14px;
+                            }
+
+                            @include width380 {
+                                font-size: 12px;
+                                padding: 8px;
+                            }
+
+                            @include width380 {
+                                font-size: 10px;
+                            }
+                        }
+    
+                        .medium {
+                            @extend .easy;
+                            border-right: 0px;
+                            border-top-left-radius: 0px;
+                            border-bottom-left-radius: 0px;
+                            color: black;
+                            background: lightgray;
+                        }
+    
+                        .hard {
+                            @extend .easy;
+                            border-left: 1px solid rgba(0,0,0,0.2);
+                            border-right: 0px;
+                            border-top-left-radius: 0px;
+                            border-bottom-left-radius: 0px;
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                            color: black;
+                            background: lightgray;
+                        }
+                    }
+                }
+            }
+        }
+
+        .button-container {
+            width: 100%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            position: relative;
+
+            .status-screen {
+                display: none;
+                place-content: center;
+                text-align: center;
+                background: $background;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                color: white;
+                font-size: 2rem;
+
+                .status {
+                    color: #ff073a;
+                }
+            }
+
+            .button1 {
+                background: $blue;
+                border: none;
+                outline: inherit;
+                border-radius: 10px;
+                display: grid;
+                place-content: center;
+
+                &:active, &.lit {
+                    background: blue;
+                }
+            }
+
+            .button2 {
+                @extend .button1;
+                background: $red;
+
+                &:active, &.lit {
+                    background: #e60000;
+                }
+            }
+
+            .button3 {
+                @extend .button1;
+                background: $yellow;
+
+                &:active, &.lit {
+                    background: #fffc00;
+                }
+            }
+
+            .button4 {
+                @extend .button1;
+                background: $green;
+
+                &:active, &.lit {
+                    background: #39ff14;
+                }
+            }
+
+            .button5 {
+                @extend .button1;
+                display: none;
+                background: $brown;
+
+                &:active, &.lit {
+                    background: #b5651d;
+                }
+            }
+
+            .button6 {
+                @extend .button5;
+                background: $purple;
+
+                &:active, &.lit {
+                    background: #ea00ff;
+                }
+            }
+
+            .button7 {
+                @extend .button5;
+                background: $orange;
+
+                &:active, &.lit {
+                    background: #ffcf00;
+                }
+            }
+
+            .button8 {
+                @extend .button7;
+                background: $cyan;
+
+                &:active, &.lit {
+                    background: rgb(0, 247, 255);
+                }
+            }
+
+            .button9 {
+                @extend .button7;
+                background: $pink;
+
+                &:active, &.lit {
+                    background: #ff009d;
+                }
+            }
+        }
+    }    
+}
+
+

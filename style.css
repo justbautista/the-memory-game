@@ -1,0 +1,509 @@
+/********************************************************************
+
+This CSS file was created using the Live SASS Compiler extension on VSCode, SCSS files that were compiled are in the scss folder
+
+********************************************************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: black;
+}
+
+.content {
+  width: 900px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    width: 100%;
+  }
+}
+
+.content header {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.content header h1 {
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .content header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content header h3 {
+    font-size: 1rem;
+  }
+}
+
+.content .game-container {
+  height: 70%;
+  width: 70%;
+}
+
+@media screen and (max-width: 900px) {
+  .content .game-container {
+    width: 90%;
+  }
+}
+
+.content .game-container .info-bar {
+  height: 20%;
+  width: 100%;
+  margin-bottom: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.content .game-container .info-bar .bottom-level,
+.content .game-container .info-bar .top-level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: lightgray;
+  border-radius: 10px;
+  height: 80%;
+}
+
+@media screen and (max-width: 500px) {
+  .content .game-container .info-bar .bottom-level,
+  .content .game-container .info-bar .top-level {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .content .game-container .info-bar .bottom-level,
+  .content .game-container .info-bar .top-level {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .bottom-level,
+  .content .game-container .info-bar .top-level {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .bottom-level,
+  .content .game-container .info-bar .top-level {
+    font-size: 9px;
+  }
+}
+
+.content .game-container .info-bar .bottom-level .left-bottom,
+.content .game-container .info-bar .top-level .left-bottom,
+.content .game-container .info-bar .bottom-level .right-bottom,
+.content .game-container .info-bar .top-level .right-bottom {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.content .game-container .info-bar .bottom-level .left-bottom .rounds,
+.content .game-container .info-bar .top-level .left-bottom .rounds,
+.content .game-container .info-bar .bottom-level .right-bottom .rounds,
+.content .game-container .info-bar .top-level .right-bottom .rounds {
+  padding: 0px 15px;
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .bottom-level .left-bottom .rounds,
+  .content .game-container .info-bar .top-level .left-bottom .rounds,
+  .content .game-container .info-bar .bottom-level .right-bottom .rounds,
+  .content .game-container .info-bar .top-level .right-bottom .rounds {
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .bottom-level .left-bottom .rounds,
+  .content .game-container .info-bar .top-level .left-bottom .rounds,
+  .content .game-container .info-bar .bottom-level .right-bottom .rounds,
+  .content .game-container .info-bar .top-level .right-bottom .rounds {
+    padding: 0px 8px;
+  }
+}
+
+.content .game-container .info-bar .bottom-level .right-bottom .timer,
+.content .game-container .info-bar .top-level .right-bottom .timer,
+.content .game-container .info-bar .bottom-level .right-bottom .lives-container,
+.content .game-container .info-bar .top-level .right-bottom .lives-container {
+  padding: 0px 15px;
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .bottom-level .right-bottom .timer,
+  .content .game-container .info-bar .top-level .right-bottom .timer,
+  .content
+    .game-container
+    .info-bar
+    .bottom-level
+    .right-bottom
+    .lives-container,
+  .content .game-container .info-bar .top-level .right-bottom .lives-container {
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .bottom-level .right-bottom .timer,
+  .content .game-container .info-bar .top-level .right-bottom .timer,
+  .content
+    .game-container
+    .info-bar
+    .bottom-level
+    .right-bottom
+    .lives-container,
+  .content .game-container .info-bar .top-level .right-bottom .lives-container {
+    padding: 0px 8px;
+  }
+}
+
+.content .game-container .info-bar .bottom-level .right-bottom .lives-container,
+.content .game-container .info-bar .top-level .right-bottom .lives-container {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.content .game-container .info-bar .top-level {
+  background: black;
+}
+
+.content .game-container .info-bar .top-level .left-top,
+.content .game-container .info-bar .top-level .right-top {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.content .game-container .info-bar .top-level .left-top .start,
+.content .game-container .info-bar .top-level .right-top .start,
+.content .game-container .info-bar .top-level .left-top .stop,
+.content .game-container .info-bar .top-level .right-top .stop {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bolder;
+  outline: inherit;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: limegreen;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .content .game-container .info-bar .top-level .left-top .start,
+  .content .game-container .info-bar .top-level .right-top .start,
+  .content .game-container .info-bar .top-level .left-top .stop,
+  .content .game-container .info-bar .top-level .right-top .stop {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .top-level .left-top .start,
+  .content .game-container .info-bar .top-level .right-top .start,
+  .content .game-container .info-bar .top-level .left-top .stop,
+  .content .game-container .info-bar .top-level .right-top .stop {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .top-level .left-top .start,
+  .content .game-container .info-bar .top-level .right-top .start,
+  .content .game-container .info-bar .top-level .left-top .stop,
+  .content .game-container .info-bar .top-level .right-top .stop {
+    font-size: 10px;
+  }
+}
+
+.content .game-container .info-bar .top-level .left-top .stop,
+.content .game-container .info-bar .top-level .right-top .stop {
+  background: red;
+  display: none;
+}
+
+.content .game-container .info-bar .top-level .right-top .difficulty .easy,
+.content .game-container .info-bar .top-level .right-top .difficulty .medium,
+.content .game-container .info-bar .top-level .right-top .difficulty .hard {
+  float: left;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 10px;
+  border: none;
+  outline: inherit;
+  color: white;
+  background: black;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .content .game-container .info-bar .top-level .right-top .difficulty .easy,
+  .content .game-container .info-bar .top-level .right-top .difficulty .medium,
+  .content .game-container .info-bar .top-level .right-top .difficulty .hard {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .top-level .right-top .difficulty .easy,
+  .content .game-container .info-bar .top-level .right-top .difficulty .medium,
+  .content .game-container .info-bar .top-level .right-top .difficulty .hard {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content .game-container .info-bar .top-level .right-top .difficulty .easy,
+  .content .game-container .info-bar .top-level .right-top .difficulty .medium,
+  .content .game-container .info-bar .top-level .right-top .difficulty .hard {
+    font-size: 10px;
+  }
+}
+
+.content .game-container .info-bar .top-level .right-top .difficulty .medium {
+  border-right: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: black;
+  background: lightgray;
+}
+
+.content .game-container .info-bar .top-level .right-top .difficulty .hard {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: black;
+  background: lightgray;
+}
+
+.content .game-container .button-container {
+  width: 100%;
+  height: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  position: relative;
+}
+
+.content .game-container .button-container .status-screen {
+  display: none;
+  place-content: center;
+  text-align: center;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+}
+
+.content .game-container .button-container .status-screen .status {
+  color: #ff073a;
+}
+
+.content .game-container .button-container .button1,
+.content .game-container .button-container .button2,
+.content .game-container .button-container .button3,
+.content .game-container .button-container .button4,
+.content .game-container .button-container .button5,
+.content .game-container .button-container .button6,
+.content .game-container .button-container .button7,
+.content .game-container .button-container .button8,
+.content .game-container .button-container .button9 {
+  background: #43aeffa8;
+  border: none;
+  outline: inherit;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.content .game-container .button-container .button1:active,
+.content .game-container .button-container .button2:active,
+.content .game-container .button-container .button3:active,
+.content .game-container .button-container .button4:active,
+.content .game-container .button-container .button5:active,
+.content .game-container .button-container .button6:active,
+.content .game-container .button-container .button7:active,
+.content .game-container .button-container .button8:active,
+.content .game-container .button-container .button9:active,
+.content .game-container .button-container .button1.lit,
+.content .game-container .button-container .lit.button2,
+.content .game-container .button-container .lit.button3,
+.content .game-container .button-container .lit.button4,
+.content .game-container .button-container .lit.button5,
+.content .game-container .button-container .lit.button6,
+.content .game-container .button-container .lit.button7,
+.content .game-container .button-container .lit.button8,
+.content .game-container .button-container .lit.button9 {
+  background: blue;
+}
+
+.content .game-container .button-container .button2 {
+  background: #ff5f6fa9;
+}
+
+.content .game-container .button-container .button2:active,
+.content .game-container .button-container .button2.lit {
+  background: #e60000;
+}
+
+.content .game-container .button-container .button3 {
+  background: #c0c001af;
+}
+
+.content .game-container .button-container .button3:active,
+.content .game-container .button-container .button3.lit {
+  background: #fffc00;
+}
+
+.content .game-container .button-container .button4 {
+  background: #00b427b0;
+}
+
+.content .game-container .button-container .button4:active,
+.content .game-container .button-container .button4.lit {
+  background: #39ff14;
+}
+
+.content .game-container .button-container .button5,
+.content .game-container .button-container .button6,
+.content .game-container .button-container .button7,
+.content .game-container .button-container .button8,
+.content .game-container .button-container .button9 {
+  display: none;
+  background: #836953a9;
+}
+
+.content .game-container .button-container .button5:active,
+.content .game-container .button-container .button6:active,
+.content .game-container .button-container .button7:active,
+.content .game-container .button-container .button8:active,
+.content .game-container .button-container .button9:active,
+.content .game-container .button-container .button5.lit,
+.content .game-container .button-container .lit.button6,
+.content .game-container .button-container .lit.button7,
+.content .game-container .button-container .lit.button8,
+.content .game-container .button-container .lit.button9 {
+  background: #b5651d;
+}
+
+.content .game-container .button-container .button6 {
+  background: #643ea0af;
+}
+
+.content .game-container .button-container .button6:active,
+.content .game-container .button-container .button6.lit {
+  background: #ea00ff;
+}
+
+.content .game-container .button-container .button7,
+.content .game-container .button-container .button8,
+.content .game-container .button-container .button9 {
+  background: #d35f01a9;
+}
+
+.content .game-container .button-container .button7:active,
+.content .game-container .button-container .button8:active,
+.content .game-container .button-container .button9:active,
+.content .game-container .button-container .button7.lit,
+.content .game-container .button-container .lit.button8,
+.content .game-container .button-container .lit.button9 {
+  background: #ffcf00;
+}
+
+.content .game-container .button-container .button8 {
+  background: #01cfd696;
+}
+
+.content .game-container .button-container .button8:active,
+.content .game-container .button-container .button8.lit {
+  background: #00f7ff;
+}
+
+.content .game-container .button-container .button9 {
+  background: #ff81d5a8;
+}
+
+.content .game-container .button-container .button9:active,
+.content .game-container .button-container .button9.lit {
+  background: #ff009d;
+}
