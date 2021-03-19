@@ -4,6 +4,12 @@
     }
 }
 
+@mixin width650 {
+    @media screen and (max-width: 650px) {
+        @content;
+    }
+}
+
 @mixin width500 {
     @media screen and (max-width: 500px) {
         @content;

@@ -1,72 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Memory Game</title>
-    <link rel="icon" href="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Flogo.png?v=1615480523682" />
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="script.js" defer></script>
-  </head>
-  <body>
-    <audio src="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Fwrong.mp3?v=1615480510989" id="wrong-answer"></audio>
-    <audio src="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Flose.mp3?v=1615480504373" id="lose"></audio>
-    <audio src="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Fwin.mp3?v=1615480506971" id="win"></audio>
+    <link rel="icon" href="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Flogo.png?v=1616177006104">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <audio src="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Fwrong.mp3?v=1616176998333" id="wrong-answer"></audio>
+    <audio src="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Flose.mp3?v=1616176989177" id="lose"></audio>
+    <audio src="https://cdn.glitch.com/764fde07-b583-4e6e-8761-1ad51f0c6b11%2Fwin.mp3?v=1616176994127" id="win"></audio>
     <div class="content">
-      <header>
-        <h1>The Memory Game</h1>
-        <p>Repeat the pattern to win!</p>
-      </header>
+        <header>
+            <div class="title">
+                <h1>The Memory Game</h1>
+                <p>Repeat the pattern to win!</p>
+            </div>
+            <div class="user-info">
+                <div class="profile">
+                    <div class="name-wrapper">
+                        <p id="name"></p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="user-wrapper">
+                            <input type="text" class="display-name" placeholder="Change Display Name">
+                            <div class="ratio-wrapper">
+                                <div class="wl-ratio-wrapper">
+                                    <p>Win/Loss</p>
+                                    <div class="wl-ratio">0</div>
+                                </div>
+                                <div class="mg-ratio-wrapper">
+                                    <p>Mistake/Guess</p>
+                                    <div class="mg-ratio">0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="drp-stat-wrapper">
+                            <div class="drp-stats">Total Games Played: <span class="tot-games-played">0</span></div>
+                            <div class="drp-stats">Total Wins: <span class="tot-wins">0</span></div>
+                            <div class="drp-stats">Total Losses: <span class="tot-losses">0</span></div>
+                            <div class="drp-stats">Mistakes: <span class="tot-mistakes">0</span></div>
+                            <div class="drp-stats">Guesses: <span class="tot-guesses">0</span></div>
+                            <div class="drp-stats">Easy Wins: <span class="tot-easy-wins">0</span></div>
+                            <div class="drp-stats">Easy Losses: <span class="tot-easy-losses">0</span></div>
+                            <div class="drp-stats">Medium Wins: <span class="tot-medium-wins">0</span></div>
+                            <div class="drp-stats">Medium Losses: <span class="tot-medium-losses">0</span></div>
+                            <div class="drp-stats">Hard Wins: <span class="tot-hard-wins">0</span></div>
+                            <div class="drp-stats">Hard Losses: <span class="tot-hard-losses">0</span></div>
+                        </div>
+                        <div class="drp-buttons">
+                            <button class="login">Log In</button>
+                            <button class="sign-up">Sign Up</button>
+                            <button class="sign-out">Sign Out</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="stats">Tot. Games Played: <span class="tot-games-played-tag">0</span></p>
+                <p class="stats">Tot. Wins/Losses: <span class="tot-wins-tag">0</span>/<span class="tot-losses-tag">0</span></p>
+            </div>
+        </header>
 
-      <div class="game-container">
-        <div class="info-bar">
-          <div class="top-level">
-            <div class="left-top">
-              <button class="start">Start</button>
-              <button class="stop">Stop</button>
+        <div class="sign-log-screen">
+            <div class="wrapper">
+                <form class="form-screen">
+                    <div class="close">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                    </div>
+                    <p class="error"></p>
+                    <input type="text" placeholder="Email" class="email">
+                    <input type="password" placeholder="Password" class="password">
+                    <button class="profile-button" id="sign-up-scrn-btn">Sign Up</button>
+                    <button class="profile-button" id="login-scrn-btn">Log In</button>
+                </form>
             </div>
-            <div class="right-top">
-              <div class="difficulty">
-                <button class="easy">Easy</button>
-                <button class="medium">Medium</button>
-                <button class="hard">Hard</button>
-              </div>
-            </div>
-          </div>
-          <div class="bottom-level">
-            <div class="left-bottom">
-              <h2 class="rounds">
-                Round <span class="curr-round">1</span> of
-                <span class="total-rounds">8</span>
-              </h2>
-            </div>
-            <div class="right-bottom">
-              <div class="timer-container">
-                <h2 class="timer">Time: <span class="time">5</span></h2>
-              </div>
-              <div class="lives-container">
-                <h2>Lives: <span class="lives">3</span></h2>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="button-container">
-          <div class="status-screen">
-            <h1>GAME OVER</h1>
-            <h1 class="status">YOU LOST</h1>
-          </div>
-          <button class="button1"></button>
-          <button class="button2"></button>
-          <button class="button3"></button>
-          <button class="button4"></button>
-          <button class="button5"></button>
-          <button class="button6"></button>
-          <button class="button7"></button>
-          <button class="button8"></button>
-          <button class="button9"></button>
+    
+        <div class="game-container">
+            <div class="info-bar">
+                <div class="top-level">
+                    <div class="left-top">
+                        <button class="start">Start</button>
+                        <button class="stop">Stop</button>
+                    </div>
+                    <div class="right-top">
+                        <div class="difficulty">
+                            <button class="easy">Easy</button>
+                            <button class="medium">Medium</button>
+                            <button class="hard">Hard</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-level">
+                    <div class="left-bottom">
+                        <h2 class="rounds">Round <span class="curr-round">1</span> of <span class="total-rounds">8</span></h2>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="timer-container">
+                            <h2 class="timer">Time: <span class="time">5</span></h2>
+                        </div>
+                        <div class="lives-container">
+                            <h2>Lives: <span class="lives">3</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <div class="status-screen">
+                    <h1>GAME OVER</h1>
+                    <h1 class="status">YOU LOST</h1>
+                </div>
+                <button class="button1"></button>                
+                <button class="button2"></button>
+                <button class="button3"></button>
+                <button class="button4"></button>
+                <button class="button5"></button>
+                <button class="button6"></button>
+                <button class="button7"></button>
+                <button class="button8"></button>
+                <button class="button9"></button>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+</body>
 </html>
