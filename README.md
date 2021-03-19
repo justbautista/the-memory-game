@@ -4,7 +4,7 @@
 
 Submitted by: Justin Bautista
 
-Time spent: 12 hours spent in total
+Time spent: 25 hours spent in total
 
 Link to project: https://glitch.com/edit/#!/imminent-polite-dime
 
@@ -38,6 +38,13 @@ The following **additional** features are implemented:
 - [x] A round counter so user can see how far they got in the game
 - [x] Plays an audio file when user makes a mistake
 - [x] Plays an audio file when user wins/loses
+- [x] Tracks player stats (games played, wins, losses, mistakes, guesses, easy wins, easy losses, etc)
+- [x] Anonymously signs in players if they don't have an account
+- [x] When anonymous players sign up, their sign-in credentials are linked to their anonymous account so they can keep their stats
+- [x] Players can login and sign out of existing accounts  
+- [x] Stats update on-screen in real time and are saved to the database after each win/loss
+- [x] Players can change their display name
+- [x] Persists account until player signs out
 
 ## Video Walkthrough
 
@@ -51,10 +58,10 @@ Here's a walkthrough of implemented user stories:
     - https://www.geeksforgeeks.org/javascript-cleartimeout-clearinterval-method/
     - Visual Studio Code
     - Visual Studio Code Live Sass Compiler Extension
+    - https://www.youtube.com/playlist?list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ
+    - https://firebase.google.com/docs
 
-2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
- 
-    A challenge I encountered was adding a timer to the game. I decided to create a timer that gave the user 5 seconds to make a guess. To do this, I had to figure out where the timer started, reset, and stopped while updating it to the HTML. To make it easier for me to understand, I created functions that handled what the timer does. After initially implementing my timer functions, I kept running into issues where either the timer sped up, became negative, didn't reset, started too late or too early, or didn't stop. I had to research setInterval() and clearInterval() to understand how they work and it turned out that my reset function kept starting new timers which is the reason my timer sped up and didn't reset properly. After I fixed that, I was able to figure out how to properly stop the timer by replacing my resetTimer() function with my stopTimer() function in some places. Also, I added an if statement to execute loseGame() when the timer reached zero which fixed the negative issue. The biggest problem was finding out how to start the timer. Wherever I placed my startTimer() function it either started the timer too early or too late. I knew it had to be called by the playClueSequence() function as I wanted the timer to start once the playback sequence ended. I played around with the placement of startTimer() and wasn't getting anywhere. So I tried executing the playSequence() function on paper and found that I could use setTimeout() to call startTimer() using the same delay as the last clue in the playback sequence. The last clue in the current playback sequence would have a delay that accounted for the full length of time it took to complete the playback sequence. With this knowledge, I was able to create an if statement that delayed the startTimer() function until the playback sequence ended. Then, I patted myself on the back as I successfully created a working timer for this game. 
+2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
  
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
 [YOUR ANSWER HERE]
