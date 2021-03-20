@@ -63,7 +63,7 @@ This shows how a player is allowed 3 mistakes (lives) and loses if a player make
 This shows the website responsiveness, the difficulty levels, and the start/stop toggle buttons
 <img src='userstories/responsive.gif' title='playthrough' width='' alt='playthrough' />
 
-This shows authentication, persistence, and how user data is updated, stored, and displayed 
+This shows authentication, persistence, changing display name, and how user data is updated, stored, and displayed 
 <img src='userstories/authprocess.gif' title='playthrough' width='' alt='playthrough' />
 
 ## Reflection Questions
