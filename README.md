@@ -42,6 +42,7 @@ The following **additional** features are implemented:
 - [x] Anonymously signs in players if they don't have an account
 - [x] When anonymous players sign up, their sign-in credentials are linked to their anonymous account so they can keep their stats
 - [x] Players can login and sign out of existing accounts  
+- [x] Shows an error message if login or sign up credentials are invalid
 - [x] Stats update on-screen in real time and are saved to the database after each win/loss
 - [x] Players can change their display name
 - [x] Persists account until player signs out
@@ -49,8 +50,21 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+This is a regular playthrough with the win screen and shows rounds increasing along with playback speed
+<img src='userstories/playthrough.gif' title='playthrough' width='' alt='playthrough' />
+
+This shows how a player is given 5 seconds for each guess and loses the game if time runs out 
+<img src='userstories/playthrough-time.gif' title='playthrough' width='' alt='playthrough' />
+
+This shows how a player is allowed 3 mistakes (lives) and loses if a player makes 3 mistakes
+<img src='userstories/playthrough-mistake.gif' title='playthrough' width='' alt='playthrough' />
+
+This shows the website responsiveness, the difficulty levels, and the start/stop buttons
+<img src='userstories/responsive.gif' title='playthrough' width='' alt='playthrough' />
+
+This shows authentication, persistence, and how user data is updated, stored, and displayed 
+<img src='userstories/authprocess.gif' title='playthrough' width='' alt='playthrough' />
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
