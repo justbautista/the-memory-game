@@ -34,10 +34,10 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x] Easy, medium, and hard difficulty (increasing total rounds and game buttons as depending on difficulty chosen)
-- [x] A round counter so user can see how far they got in the game
-- [x] Plays an audio file when user makes a mistake
-- [x] Plays an audio file when user wins/loses
+- [x] Easy, medium, and hard difficulty (increasing total rounds and game buttons depending on difficulty chosen)
+- [x] A round counter so player can see how far they got in the game
+- [x] Plays an audio file when player makes a mistake
+- [x] Plays an audio file when player wins/loses
 - [x] Tracks player stats (games played, wins, losses, mistakes, guesses, easy wins, easy losses, etc)
 - [x] Anonymously signs in players if they don't have an account
 - [x] When anonymous players sign up, their sign-in credentials are linked to their anonymous account so they can keep their stats
