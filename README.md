@@ -49,7 +49,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories (some gifs didn't catch when buttons lit up because they were clicked fast):
+Here's a walkthrough of implemented user stories:
 
 This is a regular playthrough with the win screen and shows rounds increasing along with playback speed
 <img src='userstories/playthrough.gif' title='playthrough' width='' alt='playthrough' />
