@@ -58,7 +58,7 @@ This shows how a player is given 5 seconds for each guess and loses the game if 
 <img src='userstories/playthrough-time.gif' title='playthrough' width='' alt='playthrough time' />
 
 This shows how a player is allowed 3 mistakes (lives) and loses if a player makes 3 mistakes
-<img src='userstories/playthrough-mistake.gif' title='playthrough' width='' alt='playthrough mistake' />
+<img src='userstories/mistake.gif' title='playthrough' width='' alt='playthrough mistake' />
 
 This shows the website responsiveness, the difficulty levels, and the start/stop toggle buttons
 <img src='userstories/responsive1.gif' title='playthrough' width='' alt='playthrough responsiveness' />
