@@ -51,6 +51,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+The different walkthroughs show that the computer generates random patterns for each game.
+
 This is a regular playthrough with the win screen and shows rounds increasing along with playback speed
 <img src='userstories/playthrough.gif' title='playthrough' width='' alt='playthrough' />
 
